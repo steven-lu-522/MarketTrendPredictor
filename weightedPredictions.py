@@ -69,12 +69,12 @@ accuracy = 1.0
 numPredictions = 0
 netGain = 0
 correct = False
-p.importData(symbol, True)
+p.importData(symbol)
 print("HISTORICAL PREDICTIONS")
 print("PREDICTIONS / ACTUAL")
 while canContinue:
     print("--------------------------")
-    result = predict(i, True)
+    result = predict(i, False)
     print("Day " + str(i + 1) + ": " + result)
     # if p.getPrice(18 + i) - p.getPrice(17 + i) < 0: #If using opening_prices or closing_prices
     if p.getPrice(18 + i) < 0: #If using differences
@@ -99,13 +99,8 @@ while canContinue:
     i += 1
 print("ACCURACY: " + str(int(accuracy * 10000)/100) + "%")
 print(".........")
-print(".........")
-print(".........")
 print("FUTURE PREDICTION")
-print(".........")
-print(".........")
-print(".........")
-futurePredict = predict(i, True)
+futurePredict = predict(i, False)
 if futurePredict == "N":
     print("This stock is predicted to go down tomorrow.")
 else:

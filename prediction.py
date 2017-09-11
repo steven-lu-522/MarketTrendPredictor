@@ -45,6 +45,7 @@ def importData(symbol, override=False):
         #i = the time period between each price update in seconds, p = time period of the data
         #f = the format the data is coming back in (date, close, high, low, open, volume)
         link = "https://www.google.com/finance/getprices?q=" + symbol + "&x=" + x + "&i=3600&p=2M&f=d,c,h,l,o,v"
+        print(link)
         #Separate the stock data from the information about the data, and separate the data into
         #Arrays organized by update time.
         f = requests.get(link).text.split("\n")[7:]
